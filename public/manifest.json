@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "NewsNexus Firefox Sidebar",
+  "version": "1.0",
+  "description": "Sidebar that shows URL input for the current page.",
+  "permissions": ["tabs", "scripting", "activeTab"],
+  "action": {
+    "default_title": "NewsNexus Sidebar"
+  },
+  "icons": {
+    "48": "favicon-32x32.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "sidebar_action": {
+    "default_title": "NewsNexus Sidebar",
+    "default_panel": "sidebar.html"
+  }
+}
