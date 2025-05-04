@@ -1,6 +1,6 @@
-import styles from "../../styles/NavigationBar.module.css";
+import styles from "./../styles/NavigationBar.module.css";
 import { useDispatch } from "react-redux";
-import { logoutUser } from "../../reducers/user";
+import { logoutUser } from "./../reducers/user";
 import { useSelector } from "react-redux";
 
 export default function NavigationBar() {

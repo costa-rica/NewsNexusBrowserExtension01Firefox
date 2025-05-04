@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import browser from "webextension-polyfill";
+import NavigationBar from "./common/NavigationBar";
+import styles from "./styles/AddArticle.module.css";
 
 function AddArticle() {
   const [url, setUrl] = useState("");
@@ -14,17 +16,21 @@ function AddArticle() {
   }, []);
 
   return (
-    <div style={{ padding: "1em", width: "100%" }}>
-      <label htmlFor="url">URL</label>
-      <input
-        id="url"
-        value={url}
-        readOnly
-        style={{ width: "100%", padding: "0.5em", marginTop: "0.5em" }}
-      />
-      <p style={{ marginTop: "1em", fontSize: "0.8em", color: "#888" }}>
-        API Base: {apiUrl}
-      </p>
+    <div className={styles.divMain}>
+      <NavigationBar />
+
+      <div className={styles.divMainMiddle}>
+        <label className={styles.lblArticleDetailMain} htmlFor="url">
+          URL
+        </label>
+        <input
+          id="url"
+          value={url}
+          readOnly
+          className={styles.inputArticleDetail}
+        />
+        <p>API Base: {apiUrl}</p>
+      </div>
     </div>
   );
 }

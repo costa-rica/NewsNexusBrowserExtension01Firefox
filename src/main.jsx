@@ -12,6 +12,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 
 const reducers = combineReducers({ user });
 
@@ -24,13 +25,11 @@ const store = configureStore({
 const persistor = persistStore(store);
 
 function MainApp() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const userReducer = useSelector((state) => state.user);
 
-  return loggedIn ? (
-    <AddArticle />
-  ) : (
-    <Login onLogin={() => setLoggedIn(true)} />
-  );
+  console.log("userReducer.token:", userReducer.token);
+
+  return userReducer.token ? <AddArticle /> : <Login />;
 }
 
 createRoot(document.getElementById("root")).render(

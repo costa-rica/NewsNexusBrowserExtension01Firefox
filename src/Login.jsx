@@ -4,7 +4,7 @@ import styles from "./styles/Login.module.css";
 import { useDispatch } from "react-redux";
 import { loginUser } from "./reducers/user";
 
-export default function Login({ onBack }) {
+export default function Login() {
   const dispatch = useDispatch();
   const [email, emailSetter] = useState(
     import.meta.env.VITE_ENVIRONMENT === "development"
@@ -82,7 +82,7 @@ export default function Login({ onBack }) {
           value={password}
           sendPasswordBackToParent={passwordSetter}
         />
-        <button onClick={() => handleClickLogin}>Login</button>
+        <button onClick={handleClickLogin}>Login</button>
       </div>
       <div className={styles.divRequestResponseMessage}>
         {requestResponseMessage}
