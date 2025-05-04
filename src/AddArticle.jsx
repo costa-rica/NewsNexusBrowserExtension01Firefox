@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import browser from "webextension-polyfill";
 
-function App() {
+function AddArticle() {
   const [url, setUrl] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -29,4 +29,4 @@ function App() {
   );
 }
 
-export default App;
+export default AddArticle;
