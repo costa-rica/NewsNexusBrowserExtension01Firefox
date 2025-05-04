@@ -1,0 +1,38 @@
+.autocompleteWrapper {
+  position: relative;
+  width: 300px;
+}
+
+.autocompleteInput {
+  width: 100%;
+  font-size: 1rem;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.autocompleteGhost {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  pointer-events: none;
+  font-size: 1rem;
+  color: gray;
+  display: flex;
+}
+
+.invisibleText {
+  visibility: hidden;
+  white-space: pre;
+}
+
+.ghostText {
+  color: gray;
+  font-size: 1rem;
+  pointer-events: none;
+  white-space: pre;
+  padding-top: 3px;
+}
+
+.invalidInput {
+  border: 2px solid yellow;
+}

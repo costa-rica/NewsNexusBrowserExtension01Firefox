@@ -1,0 +1,20 @@
+.divEmailAndPassword {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.divInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--input-padding);
+}
+.divInputGroup label {
+  color: var(--med-text-color);
+}
+.inputEmail {
+  border: none;
+  background-color: var(--bg-input-off-white);
+  border-radius: 12px;
+  padding: var(--input-padding);
+}

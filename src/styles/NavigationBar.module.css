@@ -1,0 +1,14 @@
+.divMain {
+  background-color: var(--blue-dark);
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+.faXmark {
+  font-size: 2rem;
+  color: gray;
+}
+.faXmark:hover {
+  color: white;
+}

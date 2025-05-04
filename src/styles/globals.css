@@ -1,0 +1,29 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --off-white: #ebebeb;
+  --gray-light: #d9d9d9;
+  --gray-medium: #979797;
+  --blue-dark: #283a59;
+  --green-approved-article: #02a031;
+  --red: #da6b3b;
+  --bg-login-left: #d9d9d9;
+  --bg-navbar-top: #283a59;
+  --bg-input-off-white: #dddddd;
+
+  --width-side-menu: 15rem;
+  --height-header: 7vh;
+  --height-header-large: 11vh;
+  --height-content-main: 95vh;
+  --height-content-main-large: 90vh;
+
+  --input-padding: 0.25rem;
+}
