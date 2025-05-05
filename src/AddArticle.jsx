@@ -46,6 +46,11 @@ function AddArticle() {
     if (url && currentTabUrl !== url) {
       setIsStale(true);
     } else {
+      setNewArticle((prev) => {
+        const result = { ...prev, url: currentTabUrl };
+        dispatch(updateNewArticle(result));
+        return result;
+      });
       setIsStale(false);
     }
   }, [currentTabUrl]);
@@ -57,6 +62,11 @@ function AddArticle() {
     });
     if (tabs[0]?.url) {
       setUrl(tabs[0].url); // Update the tracked URL input
+      setNewArticle((prev) => {
+        const result = { ...prev, url: tabs[0].url };
+        dispatch(updateNewArticle(result));
+        return result;
+      });
       setIsStale(false); // Remove yellow state
     }
   };
@@ -75,10 +85,11 @@ function AddArticle() {
       !newArticle.publicationName ||
       !newArticle.title ||
       !newArticle.publishedDate ||
-      !newArticle.content
+      !newArticle.content ||
+      !newArticle.url
     ) {
       alert(
-        "Please fill in all required fields: publication name, title, published date, content"
+        "Please fill in all required fields: publication name, title, published date, content, url"
       );
       return;
     }
@@ -127,7 +138,8 @@ function AddArticle() {
           alert(resJson.message);
           return;
         } else {
-          alert("Successfully added article");
+          // alert("Successfully added article");
+          alert(`Successfully added article: ${resJson.newArticle.id}`);
           // setArticle({});
           const blankArticle = {
             publicationName: "",
@@ -199,11 +211,17 @@ function AddArticle() {
           </button>
           <input
             id="url"
-            value={url}
-            readOnly
+            value={newArticle?.url || url}
             className={`${styles.inputArticleDetail} ${
               isStale ? styles.inputStale : ""
             }`}
+            onChange={(e) =>
+              setNewArticle((prev) => {
+                const result = { ...prev, url: e.target.value };
+                dispatch(updateNewArticle(result));
+                return result;
+              })
+            }
           />
         </div>
 
@@ -259,25 +277,13 @@ function AddArticle() {
               });
             }}
           />
-          {/* <textarea
-            value={newArticle?.content || ""}
-            className={`${inputErrors.content ? "inputError" : ""} ${
-              styles.inputArticleDetailContent
-            }`}
-            onChange={(e) => {
-              setNewArticle((prev) => {
-                const result = {
-                  ...prev,
-                  content: e.target.value,
-                };
-                dispatch(updateNewArticle(result));
-                return result;
-              });
-            }}
-          /> */}
         </div>
         <div className={styles.divMainMiddleBottom}>
-          {newArticle?.id ? (
+          {(newArticle?.publicationName ||
+            newArticle?.title ||
+            newArticle?.publishedDate ||
+            newArticle?.content ||
+            newArticle?.stateObjArray?.length > 0) && (
             <div className={styles.divMainMiddleBottomButtons}>
               <button
                 className={styles.btnClear}
@@ -292,16 +298,15 @@ function AddArticle() {
                 Clear
               </button>
             </div>
-          ) : (
-            <button
-              className={styles.btnSubmit}
-              onClick={() => {
-                handleAddAndSubmitArticle();
-              }}
-            >
-              Submit
-            </button>
           )}
+          <button
+            className={styles.btnSubmit}
+            onClick={() => {
+              handleAddAndSubmitArticle();
+            }}
+          >
+            Submit
+          </button>
         </div>
 
         <div className={styles.divArticleDetail}>

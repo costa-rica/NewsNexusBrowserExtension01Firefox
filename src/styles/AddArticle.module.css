@@ -80,3 +80,6 @@
 .inputStale {
   background-color: yellow !important;
 }
+.divMainMiddleBottomButtons {
+  width: 100%;
+}

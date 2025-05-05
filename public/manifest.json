@@ -14,7 +14,8 @@
     "scripts": ["background.js"]
   },
   "sidebar_action": {
-    "default_title": "NewsNexus Sidebar",
-    "default_panel": "sidebar.html"
+    "default_title": "NewsNexus",
+    "default_panel": "sidebar.html",
+    "default_icon": "favicon-32x32.png"
   }
 }
