@@ -1,3 +1,7 @@
+.divMain {
+  padding: 0.25rem;
+  margin: 0;
+}
 .divEmailAndPassword {
   display: flex;
   flex-direction: column;
@@ -9,12 +13,11 @@
   flex-direction: column;
   gap: var(--input-padding);
 }
-.divInputGroup label {
-  color: var(--med-text-color);
-}
+
 .inputEmail {
   border: none;
-  background-color: var(--bg-input-off-white);
-  border-radius: 12px;
+  background-color: var(--input-background-color);
+  border-radius: var(--input-border-radius);
   padding: var(--input-padding);
+  color: var(--input-text-color);
 }

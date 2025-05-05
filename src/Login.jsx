@@ -65,7 +65,7 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className={styles.divMain}>
       <h2>News Nexus Extension Login</h2>
       <div className={styles.divEmailAndPassword}>
         <div className={styles.divInputGroup}>
@@ -78,10 +78,13 @@ export default function Login() {
             placeholder="example@gmail.com"
           />
         </div>
-        <InputPassword
-          value={password}
-          sendPasswordBackToParent={passwordSetter}
-        />
+        <div className={styles.divInputGroup}>
+          <label htmlFor="password">Password</label>
+          <InputPassword
+            value={password}
+            sendPasswordBackToParent={passwordSetter}
+          />
+        </div>
         <button onClick={handleClickLogin}>Login</button>
       </div>
       <div className={styles.divRequestResponseMessage}>

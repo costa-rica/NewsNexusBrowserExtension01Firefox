@@ -8,7 +8,10 @@
   padding: 8px;
   border-radius: 0.5rem;
   cursor: pointer;
-  background-color: var(--bg-input-off-white);
+  background-color: var(--input-background-color);
+  border-radius: var(--input-border-radius);
+  padding: var(--input-padding);
+  color: var(--input-text-color);
 }
 
 .dropdown {
@@ -16,9 +19,9 @@
   top: 100%;
   left: 0;
   border: 1px solid #ccc;
-  background: white;
+  background-color: var(--input-background-color);
   z-index: 10;
-  border-radius: 0.5rem;
+  border-radius: var(--input-border-radius);
   margin-top: 4px;
 }
 
@@ -39,6 +42,10 @@
 .dropdownList {
   max-height: 150px;
   overflow-y: auto;
+  background-color: var(--input-background-color);
+  border-radius: var(--input-border-radius);
+  padding: var(--input-padding);
+  color: var(--input-text-color);
 }
 
 .dropdownItem {
@@ -54,9 +61,10 @@
   width: 95%;
   margin: 0 auto 8px auto;
   display: block;
-  padding: 6px 8px;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border: 1px solid var(--border-dark);
   font-size: 14px;
-  background-color: var(--bg-input-off-white);
+  background-color: var(--input-background-color);
+  border-radius: var(--input-border-radius);
+  padding: var(--input-padding);
+  color: var(--input-text-color);
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import styles from "../../styles/InputDropdownCheckbox.module.css"; // optional
+import styles from "./../styles/InputDropdownCheckbox.module.css"; // optional
 
 export default function InputDropdownCheckbox({
   inputObjectArray,

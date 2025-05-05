@@ -1,12 +1,12 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: Arial;
-  background-color: gray;
 }
 
+/* This applies to all elements */
 * {
   box-sizing: border-box;
+  font-family: Arial;
 }
 :root {
   --off-white: #ebebeb;
@@ -14,10 +14,11 @@ body {
   --gray-medium: #979797;
   --blue-dark: #283a59;
   --green-approved-article: #02a031;
-  --red: #da6b3b;
+  --soft-red: #da6b3b;
   --bg-login-left: #d9d9d9;
   --bg-navbar-top: #283a59;
   --bg-input-off-white: #dddddd;
+  --border-dark: #242424;
 
   --width-side-menu: 15rem;
   --height-header: 7vh;
@@ -25,5 +26,29 @@ body {
   --height-content-main: 95vh;
   --height-content-main-large: 90vh;
 
+  --input-text-color: #242424;
+  --input-background-color: #dddddd;
   --input-padding: 0.25rem;
+  --input-border-radius: 0.25rem;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.inputError {
+  border-color: var(--soft-red);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--text-color-dark);
+    background-color: #ffffff;
+    --input-text-color: #242424;
+  }
 }

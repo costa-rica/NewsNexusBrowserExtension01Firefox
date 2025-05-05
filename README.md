@@ -13,3 +13,14 @@ This was created using:
 ## public/background.js
 
 This is important for making the sidebar open up when the user clicks the extension icon.
+
+## Install in Firefox Browser
+
+1. Open Firefox
+2. Go to `about:debugging`
+3. Click on `This Firefox`
+4. Click on `Load Temporary Add-on`
+5. Select the `manifest.json` file
+
+OR `about:debugging#/runtime/this-firefox`
+and select the manifest.json file

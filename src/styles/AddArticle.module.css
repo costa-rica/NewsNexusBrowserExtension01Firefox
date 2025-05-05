@@ -21,10 +21,10 @@
 }
 .inputArticleDetail {
   flex: 1;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  /* background-color: var(--gray-medium); */
-  color: black;
+  background-color: var(--input-background-color);
+  border-radius: var(--input-border-radius);
+  padding: var(--input-padding);
+  color: var(--input-text-color);
 }
 
 .divManageStates {
@@ -35,12 +35,23 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-.inputArticleDetailContent {
+/* .inputArticleDetailContent {
   flex: 1;
   border-radius: 0.5rem;
   padding: 0.5rem;
   flex-wrap: wrap;
-  height: 10rem;
+  height: 20rem;
+} */
+.inputArticleDetailContent {
+  min-height: 5rem;
+  max-height: 10rem;
+  overflow-y: auto;
+  resize: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  line-height: 1.4;
+  box-sizing: border-box;
 }
 .divArticleContent {
   background-color: var(--gray-medium);
@@ -64,4 +75,8 @@
 }
 .btnSubmit:active {
   transform: scale(0.87);
+}
+
+.inputStale {
+  background-color: yellow !important;
 }
